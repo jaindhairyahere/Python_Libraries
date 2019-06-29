@@ -1,0 +1,1 @@
+C:\Users\Dhairya\AppData\Local\Programs\Python\Python37-32\Lib\site-packages\PyQt4\pyuic4.bat -x TicTacToeGui.ui -o TicTac.pyw
