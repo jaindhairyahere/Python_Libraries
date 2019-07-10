@@ -4,7 +4,7 @@ from email.message import EmailMessage
 
 msg = EmailMessage()
 msg['Subject']  = "Hello World this is the subject"
-msg['From'] = ''
+msg['From'] = EMAIL_ADDRESS
 msg['To'] = 'dhairyajain2001@gmail.com'
 msg.set_content("This is my body... how you doing bitch??")
 EMAIL_ADDRESS  = os.environ.get("EMAIL_USER")
