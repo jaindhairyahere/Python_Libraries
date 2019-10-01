@@ -1,8 +1,8 @@
 import sys
 import TicTac
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 #tkinter
 class TicTacToeBoard(TicTac.Ui_TicTacToe, QMainWindow):
 	def __init__(self,start='X'):
@@ -14,42 +14,42 @@ class TicTacToeBoard(TicTac.Ui_TicTacToe, QMainWindow):
 		dic={'O':1,'X':-1}
 		self._i=dic[self._start]
 
-		self.connect(self.pushButton_3,SIGNAL("clicked()"), lambda: self.pushButton_3.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_3,SIGNAL("clicked()"), lambda: self.mark(0,0))
-		self.connect(self.pushButton_3,SIGNAL("clicked()"), lambda: self.pushButton_3.setEnabled(False))
+		self.pushButton_3.clicked.connect(lambda: self.pushButton_3.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_3.clicked.connect(lambda: self.mark(0,0))
+		self.pushButton_3.clicked.connect(lambda: self.pushButton_3.setEnabled(False))
 
-		self.connect(self.pushButton_4,SIGNAL("clicked()"), lambda: self.pushButton_4.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_4,SIGNAL("clicked()"), lambda: self.mark(0,1))
-		self.connect(self.pushButton_4,SIGNAL("clicked()"), lambda: self.pushButton_4.setEnabled(False))
+		self.pushButton_4.clicked.connect(lambda: self.pushButton_4.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_4.clicked.connect(lambda: self.mark(0,1))
+		self.pushButton_4.clicked.connect(lambda: self.pushButton_4.setEnabled(False))
 
-		self.connect(self.pushButton_5,SIGNAL("clicked()"), lambda: self.pushButton_5.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_5,SIGNAL("clicked()"), lambda: self.mark(0,2))
-		self.connect(self.pushButton_5,SIGNAL("clicked()"), lambda: self.pushButton_5.setEnabled(False))
+		self.pushButton_5.clicked.connect(lambda: self.pushButton_5.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_5.clicked.connect(lambda: self.mark(0,2))
+		self.pushButton_5.clicked.connect(lambda: self.pushButton_5.setEnabled(False))
 
-		self.connect(self.pushButton_6,SIGNAL("clicked()"), lambda: self.pushButton_6.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_6,SIGNAL("clicked()"), lambda: self.mark(1,0))
-		self.connect(self.pushButton_6,SIGNAL("clicked()"), lambda: self.pushButton_6.setEnabled(False))
-		self.connect(self.pushButton_7,SIGNAL("clicked()"), lambda: self.pushButton_7.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_7,SIGNAL("clicked()"), lambda: self.mark(1,1))
-		self.connect(self.pushButton_7,SIGNAL("clicked()"), lambda: self.pushButton_7.setEnabled(False))
+		self.pushButton_6.clicked.connect(lambda: self.pushButton_6.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_6.clicked.connect(lambda: self.mark(1,0))
+		self.pushButton_6.clicked.connect(lambda: self.pushButton_6.setEnabled(False))
+		self.pushButton_7.clicked.connect(lambda: self.pushButton_7.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_7.clicked.connect(lambda: self.mark(1,1))
+		self.pushButton_7.clicked.connect(lambda: self.pushButton_7.setEnabled(False))
 
-		self.connect(self.pushButton_8,SIGNAL("clicked()"), lambda: self.pushButton_8.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_8,SIGNAL("clicked()"), lambda: self.mark(1,2))
-		self.connect(self.pushButton_8,SIGNAL("clicked()"), lambda: self.pushButton_8.setEnabled(False))
+		self.pushButton_8.clicked.connect(lambda: self.pushButton_8.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_8.clicked.connect(lambda: self.mark(1,2))
+		self.pushButton_8.clicked.connect(lambda: self.pushButton_8.setEnabled(False))
 
-		self.connect(self.pushButton_9,SIGNAL("clicked()"), lambda: self.pushButton_9.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_9,SIGNAL("clicked()"), lambda: self.mark(2,0))
-		self.connect(self.pushButton_9,SIGNAL("clicked()"), lambda: self.pushButton_9.setEnabled(False))
+		self.pushButton_9.clicked.connect(lambda: self.pushButton_9.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_9.clicked.connect(lambda: self.mark(2,0))
+		self.pushButton_9.clicked.connect(lambda: self.pushButton_9.setEnabled(False))
 
-		self.connect(self.pushButton_10,SIGNAL("clicked()"), lambda: self.pushButton_10.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_10,SIGNAL("clicked()"), lambda: self.mark(2,1))
-		self.connect(self.pushButton_10,SIGNAL("clicked()"), lambda: self.pushButton_10.setEnabled(False))
+		self.pushButton_10.clicked.connect( lambda: self.pushButton_10.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_10.clicked.connect( lambda: self.mark(2,1))
+		self.pushButton_10.clicked.connect( lambda: self.pushButton_10.setEnabled(False))
 
-		self.connect(self.pushButton_11,SIGNAL("clicked()"), lambda: self.pushButton_11.setText("%s" %self._Mark[self._i]) )
-		self.connect(self.pushButton_11,SIGNAL("clicked()"), lambda: self.mark(2,2))
-		self.connect(self.pushButton_11,SIGNAL("clicked()"), lambda: self.pushButton_11.setEnabled(False))
+		self.pushButton_11.clicked.connect( lambda: self.pushButton_11.setText("%s" %self._Mark[self._i]) )
+		self.pushButton_11.clicked.connect( lambda: self.mark(2,2))
+		self.pushButton_11.clicked.connect( lambda: self.pushButton_11.setEnabled(False))
 
-		self.connect(self.pushButton_12,SIGNAL("clicked()"), lambda: self.newgame())
+		self.pushButton_12.clicked.connect( lambda: self.newgame())
 
 
 	def mark(self,x,y):

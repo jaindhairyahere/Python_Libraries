@@ -3,9 +3,9 @@ is a single-line text box that displays plain text. '''
 from __future__ import division
 import sys
 from math import *
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 class Calci(QDialog):						# Inheriting it gives an empty grey box with 3 functional buttons(close, minimize and all)
 	def __init__(self,parent=None):
 		super(Calci,self).__init__(parent)
@@ -22,7 +22,7 @@ class Calci(QDialog):						# Inheriting it gives an empty grey box with 3 functi
 		self.setWindowTitle('Calculate')
 		self._lineedit.setFocus()
 
-		self.connect(self._lineedit, SIGNAL("returnPressed()"), self.Calculate)
+		self._lineedit.returnPressed.connect(self.Calculate)
 
 	def Calculate(self):
 		try:
